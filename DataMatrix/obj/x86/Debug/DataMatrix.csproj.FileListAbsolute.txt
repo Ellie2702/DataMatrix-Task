@@ -1,0 +1,11 @@
+C:\Users\Ellie\Desktop\4 курс\Практика (ПОПЫТКИ)\DataMatrix\DataMatrix\bin\Debug\DataMatrix.exe
+C:\Users\Ellie\Desktop\4 курс\Практика (ПОПЫТКИ)\DataMatrix\DataMatrix\bin\Debug\DataMatrix.pdb
+C:\Users\Ellie\Desktop\4 курс\Практика (ПОПЫТКИ)\DataMatrix\DataMatrix\obj\x86\Debug\MainWindow.baml
+C:\Users\Ellie\Desktop\4 курс\Практика (ПОПЫТКИ)\DataMatrix\DataMatrix\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Ellie\Desktop\4 курс\Практика (ПОПЫТКИ)\DataMatrix\DataMatrix\obj\x86\Debug\App.g.cs
+C:\Users\Ellie\Desktop\4 курс\Практика (ПОПЫТКИ)\DataMatrix\DataMatrix\obj\x86\Debug\DataMatrix_MarkupCompile.cache
+C:\Users\Ellie\Desktop\4 курс\Практика (ПОПЫТКИ)\DataMatrix\DataMatrix\obj\x86\Debug\DataMatrix.g.resources
+C:\Users\Ellie\Desktop\4 курс\Практика (ПОПЫТКИ)\DataMatrix\DataMatrix\obj\x86\Debug\DataMatrix.Properties.Resources.resources
+C:\Users\Ellie\Desktop\4 курс\Практика (ПОПЫТКИ)\DataMatrix\DataMatrix\obj\x86\Debug\DataMatrix.csproj.GenerateResource.Cache
+C:\Users\Ellie\Desktop\4 курс\Практика (ПОПЫТКИ)\DataMatrix\DataMatrix\obj\x86\Debug\DataMatrix.exe
+C:\Users\Ellie\Desktop\4 курс\Практика (ПОПЫТКИ)\DataMatrix\DataMatrix\obj\x86\Debug\DataMatrix.pdb
