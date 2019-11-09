@@ -24,6 +24,14 @@ namespace DataMatrix
             InitializeComponent();
         }
 
+        public void CodeMarg(int c, int i) {
+
+            int r = ((149 * i) % 253) + 1;
+            c = (r + 129) % 254;
+
+        }
+
+
         private void Go_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -104,18 +112,34 @@ namespace DataMatrix
                     }
                 }
 
+                //add margin
                 if (r > 0)
                 {
-                    for (int i = j; i < c.Length; i++)
+                    c[j] = 129;
+                    for (int i = j + 1; i < c.Length; i++)
                     {
-                        
+                        CodeMarg(c[i], i);
                     }
 
                 }
                 
 
+
+                //convert to bitcode
+                string binary = "";
+                byte[] sisya = new byte[c.Length];
+
+                for (int i = 0; i < c.Length; i++)
+                {
+                    binary  += Convert.ToString(c[i], 2);
+                    sisya[i] = Convert.ToByte(binary);
+                }
+
+                DM.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(sisya);
             }
-            catch { }
+            catch(Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
