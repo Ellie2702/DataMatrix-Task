@@ -37,9 +37,6 @@ namespace DataMatrix
             try
             {
                 string Text = Data.Text;
-                // dataMatrix width and height
-                int hs = 0;
-                int ws = 0;
                 // 
                 int r = 0;
                 //
@@ -49,36 +46,31 @@ namespace DataMatrix
                 //count size
                 if (Text.Length <= 3)
                 {
-                    hs = 10;
-                    ws = 10;
+
                     r = 3 - Text.Length;
                     f = 3;
                 }
                 else if (Text.Length <= 5)
                 {
-                    hs = 12;
-                    ws = 12;
+
                     r = 5 - Text.Length;
                     f = 5;
                 }
                 else if (Text.Length <= 8)
                 {
-                    hs = 14;
-                    ws = 14;
+
                     r = 8 - Text.Length;
                     f = 8;
                 }
                 else if (Text.Length <= 12)
                 {
-                    hs = 16;
-                    ws = 16;
+
                     r = 12 - Text.Length;
                     f = 12;
                 }
                 else if (Text.Length <= 18)
                 {
-                    hs = 18;
-                    ws = 18;
+
                     r = 18 - Text.Length;
                     f = 18;
                 }
@@ -87,28 +79,26 @@ namespace DataMatrix
 
                 int[] c = new int[Text.Length + r];
                 int j = 0;
-
+                string k = "";
                 for (int i = 0; i < Text.Length; i++)
                 {
-                    try {
-                        try
+                    if (Text[i] >= '0' && Text[i] <= '9')
+                    {
+                        k += Text[i].ToString();
+                        j++;
+                    }
+                    else
+                    {
+                        if (k != "")
                         {
-                            int d = Convert.ToInt32(Text[i]);
-                            int s = Convert.ToInt32(Text[i + 1]);
-
-                            string k = d.ToString() + s.ToString();
                             c[j] = Convert.ToInt32(k) + 130;
                             j++;
                         }
-                        catch { }
-                        int z = Convert.ToInt32(Text[i]);
-                        c[j] = z + 130;
-                        j++;
-                    }
-                    catch
-                    {
-                        c[j] = Text[i] + 1;
-                        j++;
+                        else
+                        {
+                            c[j] = Text[i] + 1;
+                            j++;
+                        }
                     }
                 }
 
@@ -122,7 +112,7 @@ namespace DataMatrix
                     }
 
                 }
-                
+
 
 
                 //convert to bitcode
@@ -131,15 +121,17 @@ namespace DataMatrix
 
                 for (int i = 0; i < c.Length; i++)
                 {
-                    binary  += Convert.ToString(c[i], 2);
+                    binary += Convert.ToString(c[i], 2);
                     sisya[i] = Convert.ToByte(binary);
                 }
 
                 DM.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(sisya);
             }
-            catch(Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
             }
+           
         }
     }
 }
