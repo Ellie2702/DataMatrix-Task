@@ -80,12 +80,16 @@ namespace DataMatrix
                 int[] c = new int[Text.Length + r];
                 int j = 0;
                 string k = "";
+                int p = 0;
                 for (int i = 0; i < Text.Length; i++)
                 {
                     if (Text[i] >= '0' && Text[i] <= '9')
                     {
-                        k += Text[i].ToString();
-                        j++;
+                        if (p != 2)
+                        {
+                            k += Text[i].ToString();
+                            p++;
+                        }
                     }
                     else
                     {
@@ -93,6 +97,7 @@ namespace DataMatrix
                         {
                             c[j] = Convert.ToInt32(k) + 130;
                             j++;
+                            k = "";
                         }
                         else
                         {
@@ -117,15 +122,15 @@ namespace DataMatrix
 
                 //convert to bitcode
                 string binary = "";
-                byte[] sisya = new byte[c.Length];
+              
 
                 for (int i = 0; i < c.Length; i++)
                 {
                     binary += Convert.ToString(c[i], 2);
-                    sisya[i] = Convert.ToByte(binary);
+                    
                 }
 
-                DM.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(sisya);
+                DM.Source = (ImageSource)new ImageSourceConverter().ConvertFrom(binary);
             }
             catch (Exception ex)
             {
