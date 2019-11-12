@@ -364,9 +364,9 @@ namespace DataMatrix
 
 
                 int count = 128 / f;
-                for (int i = 0; i < count; i++)
+                for (int i = 0; i < f; i++)
                 {
-                    for (int sa = 0; sa < count; sa++)
+                    for (int sa = 0; sa < f; sa++)
                     {
                         if (arr[i, sa] == 1)
                         {
